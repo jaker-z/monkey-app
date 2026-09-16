@@ -12,6 +12,7 @@ public partial class MonkeysViewModel : BaseViewModel
     public MonkeysViewModel(MonkeyService monkeyService)
     {
         Title = "Monkey Finder";
+        Spece = "Frece";
         this.monkeyService = monkeyService;
     }
 

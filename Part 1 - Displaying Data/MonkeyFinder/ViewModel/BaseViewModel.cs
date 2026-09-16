@@ -14,6 +14,9 @@ public partial class BaseViewModel : ObservableObject
     [ObservableProperty]
     string title;
 
+    [ObservableProperty]
+    string spece;
+
     public bool IsNotBusy => !IsBusy;
 }
 
