@@ -1,4 +1,5 @@
 ﻿using MonkeyFinder.Services;
+using System.Threading.Tasks;
 
 namespace MonkeyFinder.ViewModel;
 
@@ -14,9 +15,12 @@ public partial class MonkeysViewModel : BaseViewModel
         this.monkeyService = monkeyService;
     }
 
+
     [RelayCommand]
     async Task GoToDetailsAsync(Monkey monkey)
     {
+        await Shell.Current.DisplayAlertAsync("Something!", $"Monkey: {monkey.Name}\nLocation: {monkey.Location}", "OK");
+
         if (monkey is null)
             return;
 

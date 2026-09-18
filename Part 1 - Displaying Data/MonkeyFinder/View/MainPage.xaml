@@ -6,11 +6,11 @@
              x:DataType="viewmodel:MonkeysViewModel"
              Title="{Binding Title}"
              x:Class="MonkeyFinder.View.MainPage">
-    
+
 
     <Grid ColumnDefinitions="*,*"
           ColumnSpacing="5"
-          RowDefinitions="*,Auto,Auto"
+          RowDefinitions="*,Auto"
           RowSpacing="0">
 
         <CollectionView Background="Transparent"
@@ -18,14 +18,15 @@
                         ItemsSource="{Binding Monkeys}"                        
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Monkey">
+                <DataTemplate x:DataType="{x:Type model:Monkey}">
                     <Grid Padding="10">
                         <Frame HeightRequest="125"
                                Padding="0"
-                               Style="{StaticResource CardView}">
+                               Style="{StaticResource CardView}"
+                               Background="Transparent">
                             <Frame.GestureRecognizers>
-                                <TapGestureRecognizer CommandParameter="{Binding .}"
-                                                      Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MonkeysViewModel}}, Path=GoToDetailsCommand}"/>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MonkeysViewModel}}, Path=GoToDetailsCommand}"
+                                                      CommandParameter="{Binding .}"/>
                             </Frame.GestureRecognizers>
                             <Grid Padding="0"
                                   ColumnDefinitions="125,*">
@@ -58,12 +59,12 @@
                 Grid.ColumnSpan="2"
                 Margin="8"/>
 
-        <ActivityIndicator IsVisible="{Binding IsBusy}"
+        <!--<ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"
                            Grid.RowSpan="2"
-                           Grid.ColumnSpan="2"/>
+                           Grid.ColumnSpan="2"/>-->
 
     </Grid>
     
