@@ -19,7 +19,7 @@ public partial class MonkeysViewModel : BaseViewModel
     [RelayCommand]
     async Task GoToDetailsAsync(Monkey monkey)
     {
-        await Shell.Current.DisplayAlertAsync("Something!", $"Monkey: {monkey.Name}\nLocation: {monkey.Location}", "OK");
+        //await Shell.Current.DisplayAlertAsync("Something!", $"Monkey: {monkey.Name}\nLocation: {monkey.Location}", "OK");
 
         if (monkey is null)
             return;

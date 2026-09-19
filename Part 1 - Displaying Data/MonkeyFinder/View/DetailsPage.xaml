@@ -6,12 +6,14 @@
              x:DataType="viewmodel:MonkeyDetailsViewModel"
              Title="{Binding Monkey.Name}">
 
+    <!--You can add this to the above: Shell.PresentationMode="ModalAnimated"-->   
+    
     <ScrollView>
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="160,Auto">
 
-                <BoxView BackgroundColor="Orange"
+                <BoxView BackgroundColor="{StaticResource Primary}"
                          Grid.ColumnSpan="3"
                          HeightRequest="160"
                          HorizontalOptions="FillAndExpand"
@@ -35,9 +37,26 @@
                            Source="{Binding Monkey.Image}"/>
 
                 </Frame>
-
             </Grid>
-        </VerticalStackLayout>        
+
+            <VerticalStackLayout Padding="10" Spacing="10">
+                <Label Text="{Binding Monkey.Details}"
+                       Style="{StaticResource MediumLabel}"/>
+                <Label Text="{Binding Monkey.Location}"
+                       Style="{StaticResource SmallLabel}"/>
+                <Label Text="{Binding Monkey.Population, StringFormat='Population: {0}'}"/>
+                <Button Text="Go back for more monkeys"
+                        Command="{Binding GoBackCommand}"
+                        BackgroundColor="Orange"
+                        Padding="20"
+                        FontSize="18"/>
+            </VerticalStackLayout>
+            
+            
+        </VerticalStackLayout>
+
+        
+
     </ScrollView>
 
 
