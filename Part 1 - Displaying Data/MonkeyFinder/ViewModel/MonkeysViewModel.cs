@@ -1,5 +1,7 @@
 ﻿using MonkeyFinder.Services;
 using System.Threading.Tasks;
+using CommunityToolkit.Maui.Extensions;
+using CommunityToolkit.Maui;
 
 namespace MonkeyFinder.ViewModel;
 
@@ -29,8 +31,14 @@ public partial class MonkeysViewModel : BaseViewModel
             {
                 {"Monkey", monkey}
             });
+    }
 
+    [RelayCommand]
+    async Task DisplayMonkeyPopupAsync()
+    {
+        var monkeyPopup = new MonkeyAdder();
 
+        await Shell.Current.ShowPopupAsync(monkeyPopup);
     }
 
 

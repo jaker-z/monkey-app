@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:system="clr-namespace:System;assembly=mscorlib"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MonkeyFinder.MonkeyAdder"
+               x:TypeArguments="system:Boolean"
+               Padding="0">
+
+    <VerticalStackLayout>
+        <BoxView Color="Blue"
+                 HeightRequest="70"
+                 HorizontalOptions="Fill"/>
+        <VerticalStackLayout Margin="0,10" Spacing="20" Padding="15">
+
+
+            <Label Text="Do you really want to see the details on this monkey?"
+               FontSize="18"/>
+
+            <Grid ColumnDefinitions="*,*"
+              ColumnSpacing="5">
+                <Button Command="OnYes"
+                    Text="Yes"
+                    TextColor="{Static}"/>
+
+                <Button Text="No"
+                    Grid.Column="1"/>
+            </Grid>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+
+
+
+</toolkit:Popup>
