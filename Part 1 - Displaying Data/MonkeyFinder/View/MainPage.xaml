@@ -8,7 +8,7 @@
              x:Class="MonkeyFinder.View.MainPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Monkey" Command="{Binding DisplayMonkeyPopupCommand}" Order="Primary"/>
+        <ToolbarItem Text="+" Command="{Binding DisplayMonkeyPopupCommand}" Order="Primary"/>
         <ToolbarItem Text="Settings" Order="Secondary"/>
         <ToolbarItem Text="About" Order="Secondary"/>
     </ContentPage.ToolbarItems>
